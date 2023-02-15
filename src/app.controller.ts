@@ -12,7 +12,7 @@ export class AppController {
   ) { }
 
 
-  @Cron('10 * * * * *')
+  @Cron('* * * * * *')
   @Post('/order')
   createOrder(@Body() data) {
     const createdOrder = this.appService.createOrder(data);
