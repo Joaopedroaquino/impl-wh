@@ -1,10 +1,13 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from '@nestjs/common'; 
+import { HttpModule } from '@nestjs/axios'; 
+import { AppController } from './app.controller'; 
+import { AppService } from './app.service'; 
+ 
+ 
+@Module({ 
+  imports: [HttpModule],
+  controllers: [AppController], 
+  providers: [AppService], 
+}) 
 
-@Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
+export class AppModule {} 
