@@ -1,0 +1,10 @@
+POST /f84f2f23-b53a-49b2-87ad-023a31d568ca HTTP/1.1
+Host: webhook.site
+Content-Type: application/json
+Content-Length: 85
+ 
+{
+    "productId": 1,
+    "amount": 1,
+    "deliveryAddress": "Any address"
+}
