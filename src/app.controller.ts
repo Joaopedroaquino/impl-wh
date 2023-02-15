@@ -2,6 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AppService } from './app.service';
 import { Cron } from '@nestjs/schedule';
+import { Data } from './data';
 
 
 @Controller()
@@ -14,17 +15,18 @@ export class AppController {
 
   @Cron('* * * * * *')
   @Post('/order')
-  createOrder(@Body() data) {
-    const createdOrder = this.appService.createOrder(data);
+  createOrder(@Body() data: Data): Data {
+    const res = this.appService.createOrder(data);
     this.httpService
       .post('https://webhook.site/f84f2f23-b53a-49b2-87ad-023a31d568ca', data)
       .subscribe({
         complete: () => {
-          console.log('completed');
+          console.log(data);
+          return data;
         },
         error: (err) => {
         },
       });
-    return createdOrder;
+    return res;
   }
 }

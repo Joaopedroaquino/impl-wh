@@ -1,8 +1,8 @@
-export default class Data {
+export class Data {
     
-    productId: 1
-    amount: 3
-    deliveryAddress: "Any address test 2"
+    productId: number;
+    amount: number;
+    deliveryAddress: string;
 
     
 }
