@@ -4,7 +4,7 @@ Content-Type: application/json
 Content-Length: 85
  
 {
-    "productId": 1,
-    "amount": 1,
-    "deliveryAddress": "Any address"
+    "productId": 2,
+    "amount": 3,
+    "deliveryAddress": "Any address test 2"
 }
