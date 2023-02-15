@@ -1,6 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common'; 
 import { HttpService } from '@nestjs/axios'; 
 import { AppService } from './app.service'; 
+import { Cron } from '@nestjs/schedule';
  
  
 @Controller() 
@@ -11,6 +12,7 @@ export class AppController {
   ) {} 
  
  
+  @Cron('10 * * * * *')
   @Post('/order') 
   createOrder(@Body() data) { 
     const createdOrder = this.appService.createOrder(data); 
