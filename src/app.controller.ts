@@ -15,18 +15,26 @@ export class AppController {
 
   @Cron('* * * * * *')
   @Post('/order')
-  createOrder(@Body() data: Data): Data {
-    const res = this.appService.createOrder(data);
+  async createOrder(@Body() data: {"data": {
+    "productId": 2,
+    "amount": 3,
+    "deliveryAddress": "Any address test 2"
+}}) {
+    //const res =   this.appService.createOrder(data)
     this.httpService
-      .post('https://webhook.site/f84f2f23-b53a-49b2-87ad-023a31d568ca', data)
+      .post('https://webhook.site/f84f2f23-b53a-49b2-87ad-023a31d568ca', {"data": {
+        "productId": 2,
+        "amount": 3,
+        "deliveryAddress": "Any address test 2"
+    }})
       .subscribe({
         complete: () => {
-          console.log(data);
-          return data;
+          console.log(data)
+          return data
         },
         error: (err) => {
         },
       });
-    return res;
+    return data;
   }
 }

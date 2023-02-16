@@ -1,8 +1,9 @@
+
 export class Data {
     
-    productId: number;
-    amount: number;
-    deliveryAddress: string;
+    productId: 1;
+    amount: 1;
+    deliveryAddress: 'etste';
 
     
 }

@@ -7,7 +7,7 @@ export class AppService {
   private readonly logger = new Logger(AppService.name);
   
   createOrder(data:Data): Data {
-    const res = Data;
-    return data;
+    const res =  data;
+    return res;
   }
 } 
